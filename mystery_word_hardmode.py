@@ -10,7 +10,7 @@ while new_game:
     random_word_letters = list(random_word)
     turns = 8
     # level = input("Sir or Madame, which difficulty do you prefer? Novice, Intermediate, Heroic: ")
-
+    print(random_word_letters)
     print("The word contains: " + str(len(random_word)) + " letters")
     user_guess = input("Please guess a letter: ").lower()
 
@@ -33,6 +33,17 @@ while new_game:
     def guess_status():
         print("\nGood guesses: " + str(good_guess))
         print("\nBad guesses: " + str(bad_guess))
+
+
+    def play_again():
+        if turns == 1:
+            print(random_word)
+            print("\nYou lose!")
+            again = input("Would you like to play again? y/n: ")
+            if again not in "y":
+                new_game = False
+                exit()
+
 
     good_guess = []
     bad_guess = []
@@ -58,10 +69,4 @@ while new_game:
         game_control()
         guess_status()
         user_guess = input("Please guess again: ").lower()
-    if turns == 1:
-        print(random_word)
-        print("\nYou lose!")
-        again = input("Would you like to again? y/n: ")
-        if again not in "y":
-            new_game = False
-            exit()
+    play_again()
