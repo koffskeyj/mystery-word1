@@ -70,3 +70,5 @@ while new_game:
         guess_status()
         user_guess = input("Please guess again: ").lower()
     play_again()
+
+    opened_file.close()

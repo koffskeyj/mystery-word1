@@ -63,3 +63,5 @@ while turns != 0:
     game_control()
     guess_status()
     user_guess = input("Please guess again: ").lower()
+
+    opened_file.close()
